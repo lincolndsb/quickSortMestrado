@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-6">
+            <div class="col-12 col-lg-6">
                 <div class="mt-5 mb-3 card text-center">
                     <h1 class="card-header h3">Escolha uma estrategia QuickSort:</h1>
                     <div class="card-body">
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-12 col-lg-10">
                 <canvas id="timeGraph" class="mb-5" width="400" height="150" hidden></canvas>
             </div>
         </div>
