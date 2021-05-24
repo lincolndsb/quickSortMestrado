@@ -4,7 +4,7 @@ call_user_func($_POST['function']);
 function generateArray($positions = 10){
     $array = [];
     for ($i = 0; $i < $positions; $i++){ 
-        $array[] = rand(0,100);
+        $array[] = rand(0,10000);
     }
     return $array;
 }
@@ -26,10 +26,48 @@ function random_quicksort($array){
     return $merged;
 }
 
-function call_quicksort($positions = 10){
+function call_quicksort(){
     $results = array();
-    $arr = generateArray($positions);
-    $results['desordenado'] = $arr;
-    $results['ordenado'] = random_quicksort($arr);
+
+    $start = microtime(TRUE);
+    $arr = generateArray(100);
+    $quick = random_quicksort($arr);
+    $end = microtime(TRUE);
+    $results[100] = array(
+        'desordenado' => $arr,
+        'ordenado' => $quick,
+        'time' => $end - $start
+    );  
+
+    $start = microtime(TRUE);
+    $arr = generateArray(500);
+    $quick = random_quicksort($arr);
+    $end = microtime(TRUE);
+    $results[500] = array(
+        'desordenado' => $arr,
+        'ordenado' => $quick,
+        'time' => $end - $start
+    );     
+                 
+    $start = microtime(TRUE);
+    $arr = generateArray(1000);
+    $quick = random_quicksort($arr);
+    $end = microtime(TRUE);
+    $results[1000] = array(
+        'desordenado' => $arr,
+        'ordenado' => $quick,
+        'time' => $end - $start
+    ); 
+    
+    $start = microtime(TRUE);
+    $arr = generateArray(5000);
+    $quick = random_quicksort($arr);
+    $end = microtime(TRUE);
+    $results[5000] = array(
+        'desordenado' => $arr,
+        'ordenado' => $quick,
+        'time' => $end - $start
+    );    
+    
     echo json_encode($results);
 }
