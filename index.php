@@ -9,20 +9,24 @@
     <title>QuickSort - Implementação</title>
 </head>
 <body>
-    <div class="container vh-100">
-        <div class="row d-flex align-items-center flex-column justify-content-center h-100">
-            <div class="col-8">
-                <div class="card text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="mt-5 mb-3 card text-center">
                     <h1 class="card-header h3">Escolha uma estrategia QuickSort:</h1>
                     <div class="card-body">
                         <button id="random" class="btn btn-primary btn-block">Randômico com distribuição uniforme</button>
-                        <button id="index" class="btn btn-primary btn-block">Indexado como média de 3 valores</button>
-                        <button id="achaPivo" class="btn btn-primary btn-block">Algoritmo AchaPivo</button>
-                        <button id="median" class="btn btn-primary btn-block">Mediana da lista</button>
+                        <button id="index" class="btn btn-success btn-block">Indexado como média de 3 valores</button>
+                        <button id="achaPivo" class="btn btn-danger btn-block">Algoritmo AchaPivo</button>
+                        <button id="median" class="btn btn-info btn-block">Mediana da lista</button>
                     </div>
                 </div>  
-                <div id="result" class="alert alert-success mt-3" hidden></div>    
-                <canvas id="graph" width="400" height="150"></canvas>          
+                <div id="result" class="alert alert-success mt-3" hidden></div>              
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <canvas id="timeGraph" class="mb-5" width="400" height="150" hidden></canvas>
             </div>
         </div>
     </div>
